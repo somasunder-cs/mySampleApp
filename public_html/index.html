@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+         <script src="js/libs/angular.js/angular.js"></script>
+    </head>
+    <body ng-app="" ng-controller="GeoController">
+        <input type="text" ng-model="postalCode"/>
+        <button ng-click="fetchGeoName()" class="btn btn-success"  >Fetch</button><br><br>
+        <table ng-show="geoNames.length>0" class="table table-striped">
+            <tr ng-repeat="x in geoNames">
+                <td>{{x.postalcode}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.countryCode}}</td>
+                <td>{{x.lat}}</td>
+                <td>{{x.lng}}</td>
+                <td>{{x.adminName1}}</td>
+                <td>{{x.adminName2}}</td>
+            </tr>
+        </table>
+        <script src="js/GeoController.js"></script>
+        <script src="js/libs/xml2json.js"></script>  
+        <style>
+/*            table,th,td{
+                border: 5px solid gray;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            table tr:nth-child(odd)
+            {
+                background-color: #ffccff;
+            }
+            table tr:nth-child(even)
+            {
+                background-color: #ccffcc;
+            }*/
+        </style>
+    </body>
+</html>
